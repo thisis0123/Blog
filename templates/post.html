@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>post</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+
+    <div class="header">
+        <h1>Eben's Blog</h1>
+    </div>
+
+    <div class="post" style="padding: 10px; cursor: auto;">
+        <div class="info">
+            <h3 class="title">{{post.title}}</h3>
+            <h5 class="date">{{post.date}}</h5>
+            <div class="text">{{post.body}}</div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+</head>
+<body>
+
+    <div class="header">
+        <h1>Eben's Blog</h1>
+    </div>
+
+    {% for post in posts reversed %}
+    <a href="/post/{{post.id}}" style="text-decoration: none; color: black;">
+
+        <div class="post">
+            <div class="info">
+                <h3 class="title">{{post.title}}</h3>
+                <h5 class="date">{{post.date}}</h5>
+                <div class="text">{{post.body|truncatewords:15}}</div>
+            </div>
+        </div>
+
+    </a>
+    {% endfor %}
+
+
+  
+
+
+</body>
+</html>
